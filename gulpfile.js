@@ -11,12 +11,14 @@ let app = require('./tasks/app');
 let templates = require('./tasks/templates');
 let vendor = require('./tasks/vendor');
 let images = require('./tasks/images');
+let pages = require('./tasks/pages');
 
 css(BUILD_DIR);
 app(BUILD_DIR);
 templates(BUILD_DIR);
 vendor(BUILD_DIR);
 images(BUILD_DIR);
+pages(BUILD_DIR);
 
 gulp.task('connect', () => {
 	connect.server({
@@ -30,12 +32,19 @@ gulp.task('clean', (done) => {
 	return del(BUILD_DIR);
 });
 
-gulp.task('compile', ['css', 'templates', 'app', 'bundle']);
+gulp.task('compile', ['css', 'images', 'templates', 'app', 'pages']);
+gulp.task('compile:bundle', ['css:bundle', 'images', 'templates', 'app:bundle', 'pages:bundle']);
 
 gulp.task('watch', ['css:watch', 'templates:watch', 'app:watch']);
+gulp.task('build', ['vendor', 'vendor:bundle', 'compile']);
+gulp.task('bundle', ['vendor', 'vendor:bundle', 'compile:bundle']);
 
-gulp.task('build', ['vendor:copy', 'vendor:pack', 'images:copy', 'compile']);
+gulp.task('dev:prod', ['clean'], () => {
+	gulp.run(['bundle', 'connect', 'watch']);
+});
 
-gulp.task('default', ['clean'], () => {
+gulp.task('dev', ['clean'], () => {
 	gulp.run(['build', 'connect', 'watch']);
 });
+
+gulp.task('default', ['dev']);

@@ -16,17 +16,17 @@ const DYNAMIC_VENROD_LIST = [
 ]
 
 module.exports = function (BUILD_DIR) {
-	gulp.task('vendor:copy', () => {
+	gulp.task('vendor', () => {
 		return gulp.src(DYNAMIC_VENROD_LIST, { base: 'node_modules' })
 			.pipe(gulp.dest(`${BUILD_DIR}/vendor`))
 			.pipe(connect.reload());
 	});
 
-	gulp.task('vendor:pack', () => {
+	gulp.task('vendor:bundle', () => {
 		return gulp.src(VENDOR_LIST, { base: 'node_modules' })
-			.pipe(concat('static.js'))
+			.pipe(concat('vendor.js'))
 			.pipe(uglify())
-			.pipe(gulp.dest(`${BUILD_DIR}/vendor`))
+			.pipe(gulp.dest(`${BUILD_DIR}/bundle`))
 			.pipe(connect.reload());
 	});
 };

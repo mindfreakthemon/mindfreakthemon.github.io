@@ -20,18 +20,22 @@ module.exports = function (BUILD_DIR) {
 			.pipe(connect.reload());
 	});
 
-	gulp.task('bundle', ['app'], () => {
+	gulp.task('app:bundle', ['app', 'vendor'], () => {
 		var builder = new Builder('.', './systemjs.config.js');
 
 		return builder
-			.bundle('app', `${BUILD_DIR}/bundle/app.js`)
+			.bundle('app', `${BUILD_DIR}/bundle/app.js`, { minify: true })
 			.then(() => {
-				return gulp.src(`${BUILD_DIR}/bundle/app.js`)
-					.pipe(uglify())
-					.pipe(rename('app.min.js'))
-					.pipe(gulp.dest(`${BUILD_DIR}/bundle`));
+				return new Promise((resolve, reject) => {
+					gulp.src(`${BUILD_DIR}/bundle/app.js`)
+						.pipe(uglify())
+						.pipe(rename('app.min.js'))
+						.pipe(gulp.dest(`${BUILD_DIR}/bundle`))
+						.on('end', resolve)
+						.on('error', reject);
+				});
 			});
 	});
 
-	gulp.task('app:watch', () => gulp.watch(APP_SRC_GLOB, ['app', 'bundle']));
+	gulp.task('app:watch', () => gulp.watch(APP_SRC_GLOB, ['app']));
 };
