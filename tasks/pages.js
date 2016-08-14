@@ -3,6 +3,7 @@ let pug = require('gulp-pug');
 let connect = require('gulp-connect');
 let plumber = require('gulp-plumber');
 let inject = require('gulp-inject');
+let inline = require('gulp-inline-source');
 let series = require('stream-series');
 
 const PAGES_SRC_GLOB = 'assets/index.pug';
@@ -24,9 +25,16 @@ module.exports = function (BUILD_DIR) {
 
 		return gulp.src(PAGES_SRC_GLOB)
 			.pipe(plumber())
-			.pipe(inject(series(vendor, app)))
-			.pipe(inject(gulp.src(`${BUILD_DIR}/css/*.css`, { read: false })))
+			.pipe(inject(series(vendor, app), {
+				transform: (filepath) => `script(src='${filepath}.js')`
+			}))
+			.pipe(inject(gulp.src(`${BUILD_DIR}/css/*.css`, { read: false }), {
+				transform: (filepath) => `link(inline, rel='stylesheet', href='${filepath}')`
+			}))
 			.pipe(pug())
+			.pipe(inline({
+				rootpath: '.'
+			}))
 			.pipe(gulp.dest('.'))
 			.pipe(connect.reload());
 	});

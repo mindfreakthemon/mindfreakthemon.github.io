@@ -10,7 +10,9 @@ module.exports = function (BUILD_DIR) {
 	gulp.task('css', () => {
 		return gulp.src(STYLUS_SRC_GLOB)
 			.pipe(plumber())
-			.pipe(stylus({ pretty: true }))
+			.pipe(stylus({
+				pretty: true
+			}))
 			.pipe(gulp.dest(`${BUILD_DIR}/css`))
 			.pipe(connect.reload());
 	});
@@ -19,7 +21,12 @@ module.exports = function (BUILD_DIR) {
 		return gulp.src(STYLUS_SRC_GLOB)
 			.pipe(plumber())
 			.pipe(stylus({
-				compress: true
+				compress: true,
+				rawDefine: {
+					url: stylus.stylus.url({
+						limit: false
+					})
+				}
 			}))
 			.pipe(concat('bundle.min.css'))
 			.pipe(gulp.dest(`${BUILD_DIR}/css`))
