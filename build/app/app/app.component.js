@@ -19,7 +19,7 @@ var AppComponent = (function () {
     ], AppComponent.prototype, "loaded", void 0);
     AppComponent = __decorate([
         core_1.Component({
-            selector: 'body',
+            selector: 'app',
             templateUrl: 'build/templates/app.html'
         }), 
         __metadata('design:paramtypes', [])

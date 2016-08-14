@@ -1,7 +1,7 @@
 import { Component, HostBinding } from '@angular/core';
 
 @Component({
-	selector: 'body',
+	selector: 'app',
 	templateUrl: 'build/templates/app.html'
 })
 export class AppComponent {

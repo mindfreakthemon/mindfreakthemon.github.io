@@ -37914,7 +37914,7 @@ System.registerDynamic("build/app/app/app.component.js", ["@angular/core"], true
     }
     __decorate([core_1.HostBinding('class.loaded'), __metadata('design:type', Object)], AppComponent.prototype, "loaded", void 0);
     AppComponent = __decorate([core_1.Component({
-      selector: 'body',
+      selector: 'app',
       templateUrl: 'build/templates/app.html'
     }), __metadata('design:paramtypes', [])], AppComponent);
     return AppComponent;
