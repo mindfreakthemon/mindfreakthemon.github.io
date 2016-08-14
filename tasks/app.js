@@ -2,7 +2,6 @@ let gulp = require('gulp');
 let typescript = require('gulp-tsc');
 let connect = require('gulp-connect');
 let plumber = require('gulp-plumber');
-let uglify = require('gulp-uglify');
 let rename = require('gulp-rename');
 let Builder = require('systemjs-builder');
 
@@ -23,18 +22,7 @@ module.exports = function (BUILD_DIR) {
 	gulp.task('app:bundle', ['app', 'vendor'], () => {
 		var builder = new Builder('.', './systemjs.config.js');
 
-		return builder
-			.bundle('app', `${BUILD_DIR}/bundle/app.js`, { minify: true })
-			.then(() => {
-				return new Promise((resolve, reject) => {
-					gulp.src(`${BUILD_DIR}/bundle/app.js`)
-						.pipe(uglify())
-						.pipe(rename('app.min.js'))
-						.pipe(gulp.dest(`${BUILD_DIR}/bundle`))
-						.on('end', resolve)
-						.on('error', reject);
-				});
-			});
+		return builder.bundle('app', `${BUILD_DIR}/bundle/app.min.js`, { minify: true });
 	});
 
 	gulp.task('app:watch', () => gulp.watch(APP_SRC_GLOB, ['app']));

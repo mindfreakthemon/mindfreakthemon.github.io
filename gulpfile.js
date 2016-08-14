@@ -28,8 +28,8 @@ gulp.task('connect', () => {
 	});
 });
 
-gulp.task('clean', (done) => {
-	return del(BUILD_DIR);
+gulp.task('clean', () => {
+	return del([BUILD_DIR, 'index.html']);
 });
 
 gulp.task('compile', ['css', 'images', 'templates', 'app', 'pages']);
