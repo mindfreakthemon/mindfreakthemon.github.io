@@ -5,7 +5,6 @@ let plumber = require('gulp-plumber');
 
 const PUG_SRC_GLOB = 'assets/templates/**/*.pug';
 
-
 module.exports = function (BUILD_DIR) {
 	gulp.task('templates', () => {
 		return gulp.src(PUG_SRC_GLOB)
