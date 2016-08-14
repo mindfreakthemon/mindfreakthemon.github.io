@@ -26,7 +26,7 @@ module.exports = function (BUILD_DIR) {
 		return gulp.src(PAGES_SRC_GLOB)
 			.pipe(plumber())
 			.pipe(inject(series(vendor, app), {
-				transform: (filepath) => `script(src='${filepath}')`
+				transform: (filepath) => `script(inline, src='${filepath}')`
 			}))
 			.pipe(inject(gulp.src(`${BUILD_DIR}/css/*.css`, { read: false }), {
 				transform: (filepath) => `link(inline, rel='stylesheet', href='${filepath}')`
