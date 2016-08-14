@@ -9,17 +9,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css"
           integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
     <link rel="stylesheet" href="build/css/main.css">
-
-    <script src="build/vendor/core-js/client/shim.min.js"></script>
-    <script src="build/vendor/zone.js/dist/zone.js"></script>
-    <script src="build/vendor/reflect-metadata/Reflect.js"></script>
-    <script src="build/vendor/systemjs/dist/system.src.js"></script>
-    <script src="systemjs.js"></script>
-    <script>
-        System.import('app').catch(function (err) {
-            console.error(err);
-        });
-    </script>
 </head>
 <body>
 <div class="sk-circle">
@@ -36,5 +25,13 @@
     <div class="sk-circle11 sk-child"></div>
     <div class="sk-circle12 sk-child"></div>
 </div>
+<script src="build/vendor/static.js"></script>
+<script src="systemjs.config.js"></script>
+<script src="build/bundle/app.min.js"></script>
+<script>
+    System.import('app').catch(function (err) {
+        console.error(err);
+    });
+</script>
 </body>
 </html>

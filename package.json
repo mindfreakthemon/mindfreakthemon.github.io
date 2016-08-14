@@ -32,9 +32,12 @@
     "gulp-connect": "^5.0.0",
     "gulp-plumber": "^1.1.0",
     "gulp-pug": "^3.0.4",
+    "gulp-rename": "^1.2.2",
     "gulp-stylus": "^2.5.0",
     "gulp-tsc": "^1.2.0",
+    "gulp-uglify": "^2.0.0",
     "stylus": "^0.54.5",
+    "systemjs-builder": "^0.15.26",
     "typescript": "^1.8.10",
     "typings": "^1.0.4"
   }
