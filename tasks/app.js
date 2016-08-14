@@ -3,6 +3,7 @@ let typescript = require('gulp-tsc');
 let connect = require('gulp-connect');
 let plumber = require('gulp-plumber');
 let rename = require('gulp-rename');
+let embed = require('gulp-angular2-embed-templates');
 let Builder = require('systemjs-builder');
 
 const APP_SRC_GLOB = 'app/**/*.ts';
@@ -19,7 +20,19 @@ module.exports = function (BUILD_DIR) {
 			.pipe(connect.reload());
 	});
 
-	gulp.task('app:bundle', ['app', 'vendor'], () => {
+	gulp.task('app:embed', ['app', 'templates'], () => {
+		return gulp.src(`${BUILD_DIR}/app/**/*.js`, { base: `${BUILD_DIR}/app` })
+			.pipe(embed({
+				sourceType: 'js',
+				basePath: '.',
+				minimize: {
+					quotes: true
+				}
+			}))
+			.pipe(gulp.dest(`${BUILD_DIR}/app`));
+	});
+
+	gulp.task('app:bundle', ['app', 'app:embed', 'vendor'], () => {
 		var builder = new Builder('.', './systemjs.config.js');
 
 		return builder.bundle('app', `${BUILD_DIR}/bundle/app.min.js`, { minify: true });

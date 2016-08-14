@@ -18,7 +18,9 @@ module.exports = function (BUILD_DIR) {
 	gulp.task('css:bundle', () => {
 		return gulp.src(STYLUS_SRC_GLOB)
 			.pipe(plumber())
-			.pipe(stylus())
+			.pipe(stylus({
+				compress: true
+			}))
 			.pipe(concat('bundle.min.css'))
 			.pipe(gulp.dest(`${BUILD_DIR}/css`))
 			.pipe(connect.reload());

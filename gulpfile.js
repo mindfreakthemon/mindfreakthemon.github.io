@@ -35,12 +35,12 @@ gulp.task('clean', () => {
 gulp.task('compile', ['css', 'images', 'templates', 'app', 'pages']);
 gulp.task('compile:bundle', ['css:bundle', 'images', 'templates', 'app:bundle', 'pages:bundle']);
 
-gulp.task('watch', ['css:watch', 'templates:watch', 'app:watch']);
+gulp.task('watch', ['css:watch', 'templates:watch', 'app:watch', 'pages:watch']);
 gulp.task('build', ['vendor', 'vendor:bundle', 'compile']);
 gulp.task('bundle', ['vendor', 'vendor:bundle', 'compile:bundle']);
 
 gulp.task('dev:prod', ['clean'], () => {
-	gulp.run(['bundle', 'connect', 'watch']);
+	gulp.run(['bundle', 'connect']);
 });
 
 gulp.task('dev', ['clean'], () => {

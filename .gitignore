@@ -1,5 +1,6 @@
 build/app
 build/vendor
+build/templates
 typings
 node_modules
 *.log
