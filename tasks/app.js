@@ -8,20 +8,24 @@ let Builder = require('systemjs-builder');
 
 const APP_SRC_GLOB = 'app/**/*.ts';
 
-module.exports = function (BUILD_DIR) {
-
+	/**
+	 * Compiles typescript application and copies it to app dir.
+	 */
 	gulp.task('app', () => {
 		let compilerOptions = require('../tsconfig.json').compilerOptions;
 
 		return gulp.src(['typings/index.d.ts', APP_SRC_GLOB])
 			.pipe(plumber())
 			.pipe(typescript(compilerOptions))
-			.pipe(gulp.dest(`${BUILD_DIR}/app`))
+			.pipe(gulp.dest('build/app'))
 			.pipe(connect.reload());
 	});
 
+	/**
+	 * Embeds compiled templates into compiled application.
+	 */
 	gulp.task('app:embed', ['app', 'templates'], () => {
-		return gulp.src(`${BUILD_DIR}/app/**/*.js`, { base: `${BUILD_DIR}/app` })
+		return gulp.src('build/app/**/*.js', { base: 'build/app' })
 			.pipe(embed({
 				sourceType: 'js',
 				basePath: '.',
@@ -29,14 +33,16 @@ module.exports = function (BUILD_DIR) {
 					quotes: true
 				}
 			}))
-			.pipe(gulp.dest(`${BUILD_DIR}/app`));
+			.pipe(gulp.dest('build/app'));
 	});
 
+	/**
+	 * Bundles application into one file, along with RxJS and Angular2.
+	 */
 	gulp.task('app:bundle', ['app', 'app:embed', 'vendor'], () => {
 		var builder = new Builder('.', './systemjs.config.js');
 
-		return builder.bundle('app', `${BUILD_DIR}/bundle/app.min.js`, { minify: true });
+		return builder.bundle('app', 'build/bundle/app.min.js', { minify: true });
 	});
 
 	gulp.task('app:watch', () => gulp.watch(APP_SRC_GLOB, ['app']));
-};

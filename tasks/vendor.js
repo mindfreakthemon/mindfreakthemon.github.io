@@ -13,20 +13,24 @@ const VENDOR_LIST = [
 const DYNAMIC_VENROD_LIST = [
 	'node_modules/@angular/*/bundles/*.js',
 	'node_modules/rxjs/**/*.js'
-]
+];
 
-module.exports = function (BUILD_DIR) {
-	gulp.task('vendor', () => {
-		return gulp.src(DYNAMIC_VENROD_LIST, { base: 'node_modules' })
-			.pipe(gulp.dest(`${BUILD_DIR}/vendor`))
-			.pipe(connect.reload());
-	});
+/**
+ * Copies vendors that are being required in runtime.
+ */
+gulp.task('vendor', () => {
+	return gulp.src(DYNAMIC_VENROD_LIST, { base: 'node_modules' })
+		.pipe(gulp.dest('build/vendor'))
+		.pipe(connect.reload());
+});
 
-	gulp.task('vendor:bundle', () => {
-		return gulp.src(VENDOR_LIST, { base: 'node_modules' })
-			.pipe(concat('vendor.js'))
-			.pipe(uglify())
-			.pipe(gulp.dest(`${BUILD_DIR}/bundle`))
-			.pipe(connect.reload());
-	});
-};
+/**
+ * Copies vendors that are statically linked in html page.
+ */
+gulp.task('vendor:bundle', () => {
+	return gulp.src(VENDOR_LIST, { base: 'node_modules' })
+		.pipe(concat('vendor.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest('build/bundle'))
+		.pipe(connect.reload());
+});

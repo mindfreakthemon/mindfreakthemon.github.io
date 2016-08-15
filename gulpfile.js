@@ -4,33 +4,14 @@ let connect = require('gulp-connect');
 let plumber = require('gulp-plumber');
 let concat = require('gulp-concat');
 
-const BUILD_DIR = 'build';
-
-let css = require('./tasks/css');
-let app = require('./tasks/app');
-let templates = require('./tasks/templates');
-let vendor = require('./tasks/vendor');
-let images = require('./tasks/images');
-let pages = require('./tasks/pages');
-
-css(BUILD_DIR);
-app(BUILD_DIR);
-templates(BUILD_DIR);
-vendor(BUILD_DIR);
-images(BUILD_DIR);
-pages(BUILD_DIR);
-
-gulp.task('connect', () => {
-	connect.server({
-		root: '.',
-		port: 8080,
-		livereload: true
-	});
-});
-
-gulp.task('clean', () => {
-	return del([BUILD_DIR, 'index.html']);
-});
+require('./tasks/css');
+require('./tasks/app');
+require('./tasks/templates');
+require('./tasks/vendor');
+require('./tasks/images');
+require('./tasks/pages');
+require('./tasks/connect');
+require('./tasks/clean');
 
 gulp.task('compile', ['css', 'images', 'templates', 'app', 'pages']);
 gulp.task('compile:bundle', ['css:bundle', 'images', 'templates', 'app:bundle', 'pages:bundle']);
