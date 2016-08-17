@@ -6,11 +6,37 @@ html, body, app {
 app {
 	display: block;
 	background: #29262b;
-	color: #dbe2e6;
+	color: #172e3c;
 
 	&.loaded {
-		background: url('../images/bg-min.jpg');
+		background: url('../statics/images/bg-min.jpg');
 		background-size: cover;
 		background-position: 50% 0;
+	}
+
+	padding-top: 1em;
+}
+
+.card {
+	background: rgba(255, 255, 255, .4);
+	border-radius: 10px;
+
+	.row {
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
+	}
+}
+
+.photo {
+	border-radius: 10px;
+}
+
+.primary-links {
+	.row {
+		margin-top: 0;
+	}
+
+	.btn {
+		margin: 0.5em 0 0 0.5em;
 	}
 }

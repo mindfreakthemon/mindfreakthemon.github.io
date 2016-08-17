@@ -1,7 +1,7 @@
 build/app
 build/vendor
 build/templates
-build/images
+build/statics/images
 build/css
 typings
 node_modules

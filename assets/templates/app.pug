@@ -1,6 +1,31 @@
-.container
+.container.card
 	.row
-		.col-md-4
-			img(src='https://placehold.it/100x100')
-		.col-md-8
-			small soon
+		.col-md-8.text-xs-center.text-md-right
+			h4 in progress
+			progress.progress.progress-striped.progress-danger.progress-animated(value=10, max=100)
+		.col-md-4.text-xs-center
+			img.photo(src='https://www.gravatar.com/avatar/8802c03fd20b3b6ce67c4f3e03270409?s=200')
+.container.card.primary-links
+	.row.text-xs-center
+		a.btn.btn-primary(href='https://github.com/mindfreakthemon/')
+			span.icon-panic-github
+		a.btn.btn-primary.disabled
+			span.icon-panic-tumblr
+		a.btn.btn-primary.disabled
+			span.icon-panic-twitter
+		a.btn.btn-primary.disabled
+			span.icon-panic-linkedin
+		a.btn.btn-primary.disabled
+			span.icon-panic-instagram
+		a.btn.btn-primary.disabled
+			span.icon-panic-facebook
+		a.btn.btn-primary(href='skype:vitaliy.r4?chat')
+			span.icon-panic-skype
+		a.btn.btn-primary.disabled
+			span.icon-panic-foursqare
+		a.btn.btn-primary.disabled
+			span.icon-panic-google
+		a.btn.btn-primary.disabled
+			span.icon-panic-reddit
+		a.btn.btn-primary(href='mailto:lost@middle-of-nowhere.name')
+			span.icon-envelope

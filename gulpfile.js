@@ -8,13 +8,13 @@ require('./tasks/css');
 require('./tasks/app');
 require('./tasks/templates');
 require('./tasks/vendor');
-require('./tasks/images');
+require('./tasks/statics');
 require('./tasks/pages');
 require('./tasks/connect');
 require('./tasks/clean');
 
-gulp.task('compile', ['css', 'images', 'templates', 'app', 'pages']);
-gulp.task('compile:bundle', ['css:bundle', 'images', 'templates', 'app:bundle', 'pages:bundle']);
+gulp.task('compile', ['css', 'statics', 'templates', 'app', 'pages']);
+gulp.task('compile:bundle', ['css:bundle', 'statics', 'templates', 'app:bundle', 'pages:bundle']);
 
 gulp.task('watch', ['css:watch', 'templates:watch', 'app:watch', 'pages:watch']);
 gulp.task('build', ['vendor', 'vendor:bundle', 'compile']);

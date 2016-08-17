@@ -11,7 +11,7 @@ const PAGES_SRC_GLOB = 'assets/index.pug';
 /**
  * Injects vendor bundle into js section and all css files into css section.
  */
-gulp.task('pages', ['vendor:bundle'], () => {
+gulp.task('pages', ['vendor:bundle', 'app', 'css'], () => {
 	return gulp.src(PAGES_SRC_GLOB)
 		.pipe(plumber())
 		.pipe(inject(gulp.src('build/bundle/vendor.js', { read: false })))
