@@ -13,6 +13,7 @@ require('./tasks/pages');
 require('./tasks/connect');
 require('./tasks/clean');
 require('./tasks/test');
+require('./tasks/tslint');
 
 gulp.task('compile', ['css', 'statics', 'templates', 'app', 'pages']);
 gulp.task('compile:bundle', ['css:bundle', 'statics', 'templates', 'app:bundle', 'pages:bundle']);

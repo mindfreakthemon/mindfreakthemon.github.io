@@ -5,5 +5,6 @@ import { Component, HostBinding } from '@angular/core';
 	templateUrl: 'build/templates/app.html'
 })
 export class AppComponent {
-	@HostBinding('class.loaded') loaded = true;
+	@HostBinding('class.loaded')
+	public loaded = true;
 }
