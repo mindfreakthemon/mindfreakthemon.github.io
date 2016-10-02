@@ -7,4 +7,3 @@ import { Component, HostBinding } from '@angular/core';
 export class AppComponent {
 	@HostBinding('class.loaded') loaded = true;
 }
-

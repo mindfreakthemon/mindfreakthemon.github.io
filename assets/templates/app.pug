@@ -1,3 +1,11 @@
+mixin date(day,month,year)
+	.date&attributes(attributes)
+		.row
+			.col-xs-12.date__date #{day}.#{month}
+		.row
+			.col-xs-12.date__year #{year}
+
+
 .container.card
 	.row
 		.col-md-8.text-xs-center.text-md-right
@@ -25,7 +33,7 @@
 			span.pic.pic-foursquare
 		a.btn.btn-primary.disabled
 			span.pic.pic-google-plus
-		a.btn.btn-primary.disabled
+		a.btn.btn-primary(href='https://www.last.fm/user/mindfreakthemon')
 			span.pic.pic-lastfm
 		a.btn.btn-primary.disabled
 			span.pic.pic-pinterest
@@ -35,12 +43,15 @@
 			span.pic.pic-reddit
 		a.btn.btn-primary(href='mailto:lost@middle-of-nowhere.name')
 			span.pic.pic-envelope
-.container.card(style='opacity: .2')
+.container.card(style='opacity: 1')
 	.row
 		.col-xs-12
 			h2 Employment history
 
 			.media
+				.date.date-top
+					span.date__now NOW
+
 				.media-body
 					h4.media-heading Playtech, Kyiv, Ukraine
 					h6 Front-end developer / Dev Team Leader (10/2013 - current)
@@ -60,7 +71,12 @@
 						li http://bingo.ladbrokes.com/
 						li ... etc
 
+				+date('04', '10', '2013').date-bottom
+
+
 			.media
+				+date('31', '09', '2013').date-bottom
+
 				.media-body
 					h4.media-heading Plasticjam, Kyiv, Ukraine
 					h6 Front-end developer/ Back-end developer (3/2012 - 9/2013)
@@ -70,7 +86,6 @@
 						li developing projects from square one on django
 						li web publishing (bootstrap, flat.ui)
 
-
 					h6 Developed projects:
 					ul
 						li http://studyjam.net/
@@ -78,7 +93,11 @@
 						li http://nextadnet.com/
 						li http://itserviceus.com/
 
+				+date('XX', '03', '2012').date-bottom
+
 			.media
+				+date('XX', '02', '2012').date-top
+
 				.media-body
 					h4.media-heading ITMarketing, Kyiv, Ukraine
 					h6 Remote Web Developer (11/2011 - 2/2012)
@@ -93,7 +112,11 @@
 					ul
 						li http://ayur.com.ua/
 
+				+date('XX', '11', '2011').date-bottom
+
 			.media
+				+date('XX', '09', '2011').date-bottom
+
 				.media-body
 					h4.media-heading NSign, Moscow, Russia
 					h6 Remote Web Developer (2/2011 - 9/2011)
@@ -105,6 +128,12 @@
 						li client-side programming (JS/jQuery)
 						li bugfixes
 
+			.date
+				span.date__display 02.2011
+
+			.date
+				span.date__display 01.2011
+
 			.media
 				.media-body
 					h4.media-heading Modfree, Moscow, Russia
@@ -115,5 +144,7 @@
 						li web publishing
 						li project developing
 						li server administration
+
+			h3.text-xs-center ...
 
 

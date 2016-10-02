@@ -26,6 +26,7 @@
     "zone.js": "^0.6.12"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-angular2-embed-templates": "^2.2.1",
@@ -36,9 +37,12 @@
     "gulp-plumber": "^1.1.0",
     "gulp-pug": "^3.0.4",
     "gulp-rename": "^1.2.2",
+    "gulp-spawn-mocha": "^3.1.0",
     "gulp-stylus": "^2.5.0",
     "gulp-tsc": "^1.2.0",
     "gulp-uglify": "^2.0.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.1.0",
     "stream-series": "^0.1.1",
     "stylus": "^0.54.5",
     "systemjs-builder": "^0.15.26",
