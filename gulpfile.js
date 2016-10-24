@@ -15,10 +15,10 @@ require('./tasks/clean');
 require('./tasks/test');
 require('./tasks/tslint');
 
-gulp.task('compile', ['css', 'statics', 'templates', 'app', 'pages']);
-gulp.task('compile:bundle', ['css:bundle', 'statics', 'templates', 'app:bundle', 'pages:bundle']);
+gulp.task('compile', ['css', 'statics', 'templates', 'styles', 'app', 'pages']);
+gulp.task('compile:bundle', ['css:bundle', 'statics', 'templates', 'styles', 'app:bundle', 'pages:bundle']);
 
-gulp.task('watch', ['css:watch', 'templates:watch', 'app:watch', 'pages:watch', 'statics:watch']);
+gulp.task('watch', ['css:watch', 'templates:watch', 'styles:watch', 'app:watch', 'pages:watch']);
 gulp.task('build', ['vendor', 'vendor:bundle', 'compile']);
 gulp.task('bundle', ['vendor', 'vendor:bundle', 'compile:bundle']);
 
