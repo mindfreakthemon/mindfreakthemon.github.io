@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
 	moduleId: module.id,
 	selector: 'social',
-	templateUrl: 'build/templates/social/social.html'
+	templateUrl: 'tmpl/social.html'
 })
 export class SocialComponent {
 

@@ -2,11 +2,10 @@ import { Component, HostBinding } from '@angular/core';
 import { NavBarComponent } from './navbar/navbar.component';
 
 @Component({
+	moduleId: module.id,
 	selector: 'app',
-	templateUrl: 'build/templates/app.html',
-	directives: [
-		NavBarComponent
-	]
+	templateUrl: 'tmpl/app.html',
+	styleUrls: ['styles/app.css']
 })
 export class AppComponent {
 	@HostBinding('class.loaded')

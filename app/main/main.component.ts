@@ -2,11 +2,9 @@ import { Component } from '@angular/core';
 import { SocialComponent } from '../social/social.component';
 
 @Component({
+	moduleId: module.id,
 	selector: 'main',
-	templateUrl: 'build/templates/main/main.html',
-	directives: [
-		SocialComponent
-	]
+	templateUrl: 'tmpl/main.html'
 })
 export class MainComponent {
 

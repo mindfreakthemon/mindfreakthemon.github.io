@@ -7,6 +7,7 @@ let inline = require('gulp-inline-source');
 let series = require('stream-series');
 
 const PAGES_SRC_GLOB = 'assets/index.pug';
+const PAGES_OUT_DIR = '.';
 
 /**
  * Injects vendor bundle into js section and all css files into css section.
@@ -17,7 +18,7 @@ gulp.task('pages', ['vendor:bundle', 'app', 'css'], () => {
 		.pipe(inject(gulp.src('build/bundle/vendor.js', { read: false })))
 		.pipe(inject(gulp.src('build/css/*.css', { read: false })))
 		.pipe(pug({ pretty: true }))
-		.pipe(gulp.dest('.'))
+		.pipe(gulp.dest(PAGES_OUT_DIR))
 		.pipe(connect.reload());
 });
 
@@ -40,7 +41,7 @@ gulp.task('pages:bundle', ['vendor:bundle', 'app:bundle', 'css:bundle'], () => {
 		.pipe(inline({
 			rootpath: '.'
 		}))
-		.pipe(gulp.dest('.'))
+		.pipe(gulp.dest(PAGES_OUT_DIR))
 		.pipe(connect.reload());
 });
 
