@@ -1,8 +1,6 @@
 build/app
 build/vendor
 build/templates
-build/statics/images
-build/css
 build/test
 typings
 node_modules
