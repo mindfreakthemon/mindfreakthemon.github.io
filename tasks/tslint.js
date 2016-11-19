@@ -4,7 +4,6 @@ let plumber = require('gulp-plumber');
 
 const TEST_SRC_GLOB = 'test/**/*.ts';
 const APP_SRC_GLOB = 'app/**/*.ts';
-const TYPINGS_SRC_GLOB = 'typings/**/*.d.ts';
 
 const TSLINT_OPTIONS = {
 	formatter: 'verbose'

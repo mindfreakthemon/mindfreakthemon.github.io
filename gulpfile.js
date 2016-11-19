@@ -16,19 +16,17 @@ require('./tasks/clean');
 require('./tasks/test');
 require('./tasks/tslint');
 
-gulp.task('compile', ['css', 'statics', 'templates', 'css', 'styles', 'app', 'pages']);
-gulp.task('compile:bundle', ['css:bundle', 'statics', 'templates', 'css', 'styles', 'app:bundle', 'pages:bundle']);
+gulp.task('compile', ['statics', 'app', 'templates', 'styles', 'css', 'pages']);
+gulp.task('compile:prod', ['statics', 'pages:prod']);
 
 gulp.task('watch', ['css:watch', 'templates:watch', 'css:watch', 'styles:watch', 'app:watch', 'pages:watch']);
-gulp.task('build', ['vendor', 'vendor:bundle', 'compile']);
-gulp.task('bundle', ['vendor', 'vendor:bundle', 'compile:bundle']);
 
 gulp.task('dev:prod', ['clean'], () => {
-	gulp.run(['bundle', 'connect']);
+	gulp.run(['vendor', 'compile:prod', 'connect']);
 });
 
 gulp.task('dev', ['clean'], () => {
-	gulp.run(['build', 'connect', 'watch']);
+	gulp.run(['vendor', 'compile', 'connect', 'watch']);
 });
 
 gulp.task('default', ['dev']);

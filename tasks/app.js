@@ -25,7 +25,7 @@ gulp.task('app', ['app:clear'], () => {
 /**
  * Embeds compiled templates & styles into compiled application.
  */
-gulp.task('app:embed', ['app', 'css', 'templates'], () => {
+gulp.task('app:embed', ['app', 'styles', 'templates'], () => {
 	return gulp.src(`${APP_OUT_DIR}/**/*.js`, { base: APP_OUT_DIR })
 		.pipe(embed({
 			target: 'es5',
@@ -37,7 +37,7 @@ gulp.task('app:embed', ['app', 'css', 'templates'], () => {
 /**
  * Bundles application into one file, along with RxJS and Angular2.
  */
-gulp.task('app:bundle', ['app:embed', 'vendor'], () => {
+gulp.task('app:prod', ['app:embed', 'vendor'], () => {
 	var builder = new Builder('.', './systemjs.config.js');
 
 	return builder.bundle('app', 'build/bundle/app.min.js', { minify: true });

@@ -31,7 +31,7 @@ gulp.task('css', ['css:clear'], () => {
  * Compiles each styl file into one build.main.css and places it in css dir.
  * Inlines all the images via base64 data URI.
  */
-gulp.task('css:bundle', ['css:clear'], () => {
+gulp.task('css:prod', ['css:clear'], () => {
 	return gulp.src(STYLUS_SRC_GLOB)
 		.pipe(plumber())
 		.pipe(stylus({

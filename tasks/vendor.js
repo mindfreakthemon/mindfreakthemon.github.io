@@ -18,7 +18,7 @@ const DYNAMIC_VENROD_LIST = [
 /**
  * Copies vendors that are being required in runtime.
  */
-gulp.task('vendor', () => {
+gulp.task('vendor:dynamic', () => {
 	return gulp.src(DYNAMIC_VENROD_LIST, { base: 'node_modules' })
 		.pipe(gulp.dest('build/vendor'))
 		.pipe(connect.reload());
@@ -27,10 +27,13 @@ gulp.task('vendor', () => {
 /**
  * Copies vendors that are statically linked in html page.
  */
-gulp.task('vendor:bundle', () => {
+gulp.task('vendor:static', () => {
 	return gulp.src(VENDOR_LIST, { base: 'node_modules' })
 		.pipe(concat('vendor.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('build/bundle'))
 		.pipe(connect.reload());
 });
+
+
+gulp.task('vendor', ['vendor:static', 'vendor:dynamic']);

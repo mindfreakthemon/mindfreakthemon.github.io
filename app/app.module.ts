@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 import { SocialComponent } from './social/social.component';
 import { MainComponent } from './main/main.component';
 import { CVComponent } from './cv/cv.component';
 import { NavBarComponent } from './navbar/navbar.component';
+import { RootComponent } from './root/root.component';
 
 @NgModule({
 	imports: [
@@ -16,7 +16,7 @@ import { NavBarComponent } from './navbar/navbar.component';
 	],
 
 	declarations: [
-		AppComponent,
+		RootComponent,
 		SocialComponent,
 		MainComponent,
 		CVComponent,
@@ -24,7 +24,7 @@ import { NavBarComponent } from './navbar/navbar.component';
 	],
 
 	bootstrap: [
-		AppComponent
+		RootComponent
 	]
 })
 export class AppModule {
