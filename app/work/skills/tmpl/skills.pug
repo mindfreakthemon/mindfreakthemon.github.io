@@ -1,0 +1,8 @@
+.container.card
+	.row
+		.col-xs-12
+			h2 Skills
+
+			ng-container('*ngIf'='skills.length')
+				skill('[skill]'='skill', '*ngFor'='let skill of skills')
+
