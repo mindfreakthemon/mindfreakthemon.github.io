@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { WorkRoutingModule } from './work-routing.module';
-import { CVComponent } from './cv/cv.component';
+import { JobsComponent } from './jobs/jobs.component';
 import { SkillsComponent } from './skills/skills.component';
 import { RootComponent } from './root/root.component';
 import { SkillComponent } from './skills/skill.component';
@@ -19,7 +19,7 @@ import { SkillService } from './skills/services/skill.service';
 		RootComponent,
 		SkillComponent,
 		SkillsComponent,
-		CVComponent
+		JobsComponent
 	],
 
 	providers: [

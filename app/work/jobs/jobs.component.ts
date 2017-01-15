@@ -3,9 +3,9 @@ import { Component } from '@angular/core';
 @Component({
 	moduleId: module.id,
 	selector: 'cv',
-	templateUrl: 'tmpl/cv.html',
-	styleUrls: ['styles/cv.css']
+	templateUrl: 'tmpl/jobs.html',
+	styleUrls: ['styles/jobs.css']
 })
-export class CVComponent {
+export class JobsComponent {
 
 }

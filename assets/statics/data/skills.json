@@ -1,8 +1,89 @@
 {
 	"data": [
 		{
-			"name": "javascript",
-			"description": "Norm skill cho"
+			"category": "programming-language",
+			"name": "JavaScript",
+			"description": "Including ES2016",
+			"type": "primary",
+			"icon": "/build/statics/images/js.jpg"
+		},
+		{
+			"category": "framework",
+			"name": "Angular 2",
+			"type": "primary",
+			"description": "Area: Building SPA, components etc."
+		},
+		{
+			"category": "framework",
+			"name": "jQuery",
+			"type": "primary",
+			"description": "Area: Building SPA, components etc."
+		},
+		{
+			"category": "programming-language",
+			"name": "TypeScript",
+			"type": "primary",
+			"description": "Strict Typing <3"
+		},
+		{
+			"category": "programming-language",
+			"name": "CoffeeScript",
+			"type": "primary",
+			"description": "With each new ES version becomes more and more redundant."
+		},
+		{
+			"category": "programming-language",
+			"name": "Ada",
+			"type": "secondary",
+			"description": "Area: Parallel computing"
+		},
+		{
+			"category": "programming-language",
+			"name": "C / C++",
+			"type": "secondary",
+			"description": "Area: Parallel computing, native addons for node.js"
+		},
+		{
+			"category": "programming-language",
+			"name": "Python",
+			"type": "primary",
+			"description": "Area: Django, scripting"
+		},
+		{
+			"category": "programming-language",
+			"name": "PHP",
+			"type": "primary",
+			"description": "Area: Zend, SASS, casual sites, scripting"
+		},
+		{
+			"category": "programming-language",
+			"name": "Go",
+			"type": "secondary",
+			"description": "Area: web server for handling big amount of traffic"
+		},
+		{
+			"category": "programming-language",
+			"name": "Java",
+			"type": "secondary",
+			"description": "Area: Swing apps, scripting"
+		},
+		{
+			"category": "databases",
+			"name": "MySQL / MariaDB",
+			"type": "primary",
+			"description": "Area: using with web servers"
+		},
+		{
+			"category": "databases",
+			"name": "Redis",
+			"type": "primary",
+			"description": "Area: using with web servers"
+		},
+		{
+			"category": "databases",
+			"name": "MongoDB",
+			"type": "primary",
+			"description": "Area: using with web servers"
 		}
 	]
 }

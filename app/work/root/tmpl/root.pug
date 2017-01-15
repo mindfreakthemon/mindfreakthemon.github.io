@@ -1,11 +1,7 @@
 
-.container
-	ul.nav.navbar-nav
-		li.nav-item('routerLinkActive'='active')
-			a.nav-link('routerLink'='/work/cv') CV
-		li.nav-item('routerLinkActive'='active')
-			a.nav-link('routerLink'='/work/skills') Skills
-
-
+nav.nav
+	a.nav-link('routerLinkActive'='active', 'routerLink'='/work/jobs') Employment History
+	a.nav-link('routerLinkActive'='active', 'routerLink'='/work/skills') Skills
+	a.nav-link('routerLinkActive'='active', 'routerLink'='/work/education') Education
 
 router-outlet

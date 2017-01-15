@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CVComponent } from './cv/cv.component';
+import { JobsComponent } from './jobs/jobs.component';
 import { SkillsComponent } from './skills/skills.component';
 import { RootComponent } from './root/root.component';
 
@@ -11,7 +11,7 @@ const routes: Routes = [
 		children: [
 			{
 				path: '',
-				redirectTo: 'cv',
+				redirectTo: 'jobs',
 				pathMatch: 'full'
 			},
 			{
@@ -19,8 +19,8 @@ const routes: Routes = [
 				component: SkillsComponent
 			},
 			{
-				path: 'cv',
-				component: CVComponent
+				path: 'jobs',
+				component: JobsComponent
 			}
 		]
 	}
