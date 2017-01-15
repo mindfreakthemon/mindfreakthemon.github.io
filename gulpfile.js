@@ -19,7 +19,7 @@ require('./tasks/tslint');
 gulp.task('compile', ['statics', 'app', 'templates', 'styles', 'css', 'pages']);
 gulp.task('compile:prod', ['statics', 'pages:prod']);
 
-gulp.task('watch', ['css:watch', 'templates:watch', 'css:watch', 'styles:watch', 'app:watch', 'pages:watch']);
+gulp.task('watch', ['css:watch', 'templates:watch', 'css:watch', 'styles:watch', 'app:watch', 'pages:watch', 'statics:watch']);
 
 gulp.task('dev:prod', ['clean'], () => {
 	gulp.run(['vendor', 'compile:prod', 'connect']);
