@@ -2,11 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { WorkRoutingModule } from './work-routing.module';
-import { JobsComponent } from './jobs/jobs.component';
+import { JobsRouteComponent } from './jobs/jobs-route.component';
 import { SkillsComponent } from './skills/skills.component';
 import { RootComponent } from './root/root.component';
 import { SkillComponent } from './skills/skill.component';
-import { SkillService } from './skills/services/skill.service';
+import { SkillsService } from './skills/services/skills.service';
+import { SkillsRouteComponent } from './skills/skills-route.component';
+import { JobsService } from './jobs/services/jobs.service';
+import { JobsComponent } from './jobs/jobs.component';
 
 @NgModule({
 	imports: [
@@ -19,11 +22,14 @@ import { SkillService } from './skills/services/skill.service';
 		RootComponent,
 		SkillComponent,
 		SkillsComponent,
-		JobsComponent
+		SkillsRouteComponent,
+		JobsComponent,
+		JobsRouteComponent
 	],
 
 	providers: [
-		SkillService
+		SkillsService,
+		JobsService
 	]
 })
 export class WorkModule {

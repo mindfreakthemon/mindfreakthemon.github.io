@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { SkillModel, SkillCategory } from '../models/skill.model';
 
 @Injectable()
-export class SkillService {
+export class SkillsService {
 
 	private cache: SkillModel[];
 

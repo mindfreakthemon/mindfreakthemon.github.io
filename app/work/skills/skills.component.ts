@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { SkillService } from './services/skill.service';
-import { SkillModel } from './models/skill.model';
+import { Component, Input, OnInit } from '@angular/core';
+import { SkillModel, SkillCategory } from './models/skill.model';
+import { SkillsService } from './services/skills.service';
 
 @Component({
 	moduleId: module.id,
@@ -9,17 +9,19 @@ import { SkillModel } from './models/skill.model';
 	styleUrls: ['styles/skills.css']
 })
 export class SkillsComponent implements OnInit {
-
-	protected skillService: SkillService;
+	@Input()
+	protected category: SkillCategory;
 
 	protected skills: SkillModel[] = [];
 
-	constructor(skillService: SkillService) {
-		this.skillService = skillService;
+	protected skillsService: SkillsService;
+
+	constructor(skillService: SkillsService) {
+		this.skillsService = skillService;
 	}
 
 	ngOnInit(): void {
-		this.skillService.getSkills()
+		this.skillsService.getParticularSetOfSkills(this.category)
 			.then((skills) => this.skills = skills);
 	}
 }

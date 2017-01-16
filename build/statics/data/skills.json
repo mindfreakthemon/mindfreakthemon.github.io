@@ -5,13 +5,14 @@
 			"name": "JavaScript",
 			"description": "Including ES2016",
 			"type": "primary",
-			"icon": "/build/statics/images/js.jpg"
+			"icon": "/build/statics/images/skills/programming-language/js.jpg"
 		},
 		{
 			"category": "framework",
 			"name": "Angular 2",
 			"type": "primary",
-			"description": "Area: Building SPA, components etc."
+			"description": "Area: Building SPA, components etc.",
+			"icon": "/build/statics/images/skills/framework/angular2.png"
 		},
 		{
 			"category": "framework",
@@ -23,49 +24,57 @@
 			"category": "programming-language",
 			"name": "TypeScript",
 			"type": "primary",
-			"description": "Strict Typing <3"
+			"description": "Strict Typing <3",
+			"icon": "/build/statics/images/skills/programming-language/ts.png"
 		},
 		{
 			"category": "programming-language",
 			"name": "CoffeeScript",
 			"type": "primary",
-			"description": "With each new ES version becomes more and more redundant."
+			"description": "With each new ES version becomes more and more redundant.",
+			"icon": "/build/statics/images/skills/programming-language/coffee.png"
 		},
 		{
 			"category": "programming-language",
 			"name": "Ada",
 			"type": "secondary",
-			"description": "Area: Parallel computing"
+			"description": "Area: Parallel computing",
+			"icon": "/build/statics/images/skills/programming-language/ada.png"
 		},
 		{
 			"category": "programming-language",
 			"name": "C / C++",
 			"type": "secondary",
-			"description": "Area: Parallel computing, native addons for node.js"
+			"description": "Area: Parallel computing, native addons for node.js",
+			"icon": "/build/statics/images/skills/programming-language/cplusplus.png"
 		},
 		{
 			"category": "programming-language",
 			"name": "Python",
 			"type": "primary",
-			"description": "Area: Django, scripting"
+			"description": "Area: Django, scripting",
+			"icon": "/build/statics/images/skills/programming-language/python.png"
 		},
 		{
 			"category": "programming-language",
 			"name": "PHP",
 			"type": "primary",
-			"description": "Area: Zend, SASS, casual sites, scripting"
+			"description": "Area: Zend, SASS, casual sites, scripting",
+			"icon": "/build/statics/images/skills/programming-language/php.jpg"
 		},
 		{
 			"category": "programming-language",
 			"name": "Go",
 			"type": "secondary",
-			"description": "Area: web server for handling big amount of traffic"
+			"description": "Area: web server for handling big amount of traffic",
+			"icon": "/build/statics/images/skills/programming-language/go.jpeg"
 		},
 		{
 			"category": "programming-language",
 			"name": "Java",
 			"type": "secondary",
-			"description": "Area: Swing apps, scripting"
+			"description": "Area: Swing apps, algorithm scripting",
+			"icon": "/build/statics/images/skills/programming-language/java.png"
 		},
 		{
 			"category": "databases",
@@ -83,6 +92,12 @@
 			"category": "databases",
 			"name": "MongoDB",
 			"type": "primary",
+			"description": "Area: using with web servers"
+		},
+		{
+			"category": "databases",
+			"name": "CouchDB",
+			"type": "secondary",
 			"description": "Area: using with web servers"
 		}
 	]

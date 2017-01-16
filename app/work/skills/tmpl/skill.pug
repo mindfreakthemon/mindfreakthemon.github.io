@@ -1,8 +1,13 @@
-.media
-	ng-container('*ngIf'='skill.icon')
-		img.img-thumbnail.rounded.mr-3('[src]'='skill.icon')
-	.media-body
-		h4.mt-0 {{skill.name}}
-		h5 {{skill.category}} {{skill.type}}
-		span {{skill.description}}
+.row
+	.col-4.text-center
+		ng-container('*ngIf'='skill.icon')
+			img.img-thumbnail.rounded('[src]'='skill.icon')
+
+		.badge(
+			'[class.badge-primary]'='skill.type === "primary"',
+			'[class.badge-info]'='skill.type === "secondary"'
+		) {{skill.type}}
+	.col
+		h4 {{skill.name}}
+		.description {{skill.description}}
 

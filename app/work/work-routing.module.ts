@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { JobsComponent } from './jobs/jobs.component';
-import { SkillsComponent } from './skills/skills.component';
 import { RootComponent } from './root/root.component';
+import { JobsRouteComponent } from './jobs/jobs-route.component';
+import { SkillsRouteComponent } from './skills/skills-route.component';
 
 const routes: Routes = [
 	{
@@ -16,11 +16,11 @@ const routes: Routes = [
 			},
 			{
 				path: 'skills',
-				component: SkillsComponent
+				component: SkillsRouteComponent
 			},
 			{
 				path: 'jobs',
-				component: JobsComponent
+				component: JobsRouteComponent
 			}
 		]
 	}
