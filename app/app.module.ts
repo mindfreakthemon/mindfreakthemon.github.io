@@ -7,10 +7,12 @@ import { NavBarComponent } from './navbar/navbar.component';
 import { RootComponent } from './root/root.component';
 import { AppRoutingModule } from './app-routing.module';
 import { WorkModule } from './work/work.module';
+import { ProjectModule } from './projects/projects.module';
 
 @NgModule({
 	imports: [
 		WorkModule,
+		ProjectModule,
 		AppRoutingModule,
 		BrowserModule,
 		FormsModule
