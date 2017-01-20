@@ -1,13 +1,13 @@
 .row
 	.col-4.text-center
-		ng-container('*ngIf'='skill.icon')
-			img.img-thumbnail.rounded('[src]'='skill.icon')
+		img.img-thumbnail.rounded('[src]'='skill.icon', '*ngIf'='skill.icon')
+		.img-placeholder.rounded('*ngIf'='!skill.icon')
 
 		.badge(
 			'[class.badge-primary]'='skill.type === "primary"',
 			'[class.badge-info]'='skill.type === "secondary"'
 		) {{skill.type}}
 	.col
-		h4 {{skill.name}}
+		h6 {{skill.name}}
 		.description {{skill.description}}
 

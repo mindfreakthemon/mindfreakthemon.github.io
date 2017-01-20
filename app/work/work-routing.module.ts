@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RootComponent } from './root/root.component';
 import { JobsRouteComponent } from './jobs/jobs-route.component';
 import { SkillsRouteComponent } from './skills/skills-route.component';
+import { EducationRouteComponent } from './education/education-route.component';
 
 const routes: Routes = [
 	{
@@ -21,6 +22,10 @@ const routes: Routes = [
 			{
 				path: 'jobs',
 				component: JobsRouteComponent
+			},
+			{
+				path: 'education',
+				component: EducationRouteComponent
 			}
 		]
 	}

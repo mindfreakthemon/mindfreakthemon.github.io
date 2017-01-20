@@ -1,11 +1,34 @@
 {
 	"data": [
 		{
-			"category": "programming-language",
-			"name": "JavaScript",
-			"description": "Including ES2016",
-			"type": "primary",
-			"icon": "/build/statics/images/skills/programming-language/js.jpg"
+			"category": "data-science",
+			"name": "Data Manipulation & Visualisation",
+			"description": "",
+			"type": "primary"
+		},
+		{
+			"category": "data-science",
+			"name": "Statistics & Optimisation",
+			"description": "Collect and use statistics to improve performance",
+			"type": "primary"
+		},
+		{
+			"category": "data-science",
+			"name": "Optimisation Techniques",
+			"description": "Identifying bottlenecks and improving them",
+			"type": "primary"
+		},
+		{
+			"category": "data-science",
+			"name": "Numerical Algorithms",
+			"description": "",
+			"type": "primary"
+		},
+		{
+			"category": "data-science",
+			"name": "Parallel Databases & Algorithms",
+			"description": "Introducing parallelism",
+			"type": "primary"
 		},
 		{
 			"category": "framework",
@@ -16,10 +39,22 @@
 		},
 		{
 			"category": "framework",
-			"name": "jQuery",
+			"name": "Backbone",
 			"type": "primary",
-			"description": "Area: Building SPA, components etc.",
-			"icon": "/build/statics/images/skills/framework/jquery.png"
+			"description": "Area: Building SPA"
+		},
+		{
+			"category": "framework",
+			"name": "ExtJS 4",
+			"type": "primary",
+			"description": "Area: Building SPA"
+		},
+		{
+			"category": "programming-language",
+			"name": "JavaScript",
+			"description": "Including ES2016",
+			"type": "primary",
+			"icon": "/build/statics/images/skills/programming-language/js.jpg"
 		},
 		{
 			"category": "programming-language",
@@ -78,8 +113,38 @@
 			"icon": "/build/statics/images/skills/programming-language/java.png"
 		},
 		{
+			"category": "markup-language",
+			"name": "XML",
+			"type": "primary",
+			"description": "With DTD and namespaces"
+		},
+		{
+			"category": "markup-language",
+			"name": "HTML",
+			"type": "primary",
+			"description": "HTML5"
+		},
+		{
+			"category": "markup-language",
+			"name": "YAML",
+			"type": "primary",
+			"description": ""
+		},
+		{
+			"category": "stylesheet-language",
+			"name": "CSS",
+			"type": "primary",
+			"description": "Advanced knowledge, CSS3+"
+		},
+		{
+			"category": "stylesheet-language",
+			"name": "XSL",
+			"type": "secondary",
+			"description": "Area: browser extensions"
+		},
+		{
 			"category": "databases",
-			"name": "MySQL / MariaDB",
+			"name": "MySQL",
 			"type": "primary",
 			"description": "Area: using with web servers",
 			"icon": "/build/statics/images/skills/databases/mysql.jpg"
@@ -104,6 +169,144 @@
 			"type": "secondary",
 			"description": "Area: using with web servers",
 			"icon": "/build/statics/images/skills/databases/couchdb.png"
+		},
+		{
+			"category": "version-control",
+			"name": "Git",
+			"type": "primary",
+			"description": "Advanced knowledge"
+		},
+		{
+			"category": "version-control",
+			"name": "Mercurial",
+			"type": "secondary",
+			"description": "Pre-intermediate knowledge"
+		},
+		{
+			"category": "version-control",
+			"name": "SVN",
+			"type": "primary",
+			"description": "Intermediate knowledge"
+		},
+		{
+			"category": "communication-general",
+			"name": "Commication",
+			"type": "primary",
+			"description": "Discuss & agree on a feature / idea"
+		},
+		{
+			"category": "communication-general",
+			"name": "Writing",
+			"type": "primary",
+			"description": "Document a feature / idea"
+		},
+		{
+			"category": "communication-general",
+			"name": "Presentation",
+			"type": "primary",
+			"description": "Present a feature / idea"
+		},
+		{
+			"category": "project-methodologies",
+			"name": "Scrum",
+			"type": "primary",
+			"description": "Sprints, retros"
+		},
+		{
+			"category": "project-methodologies",
+			"name": "Kanban",
+			"type": "primary",
+			"description": "Fixed version / date delivery"
+		},
+		{
+			"category": "project-methodologies",
+			"name": "Waterflow",
+			"type": "primary",
+			"description": "Continuous delivery"
+		},
+		{
+			"category": "web-server",
+			"name": "Apache",
+			"type": "primary",
+			"description": ""
+		},
+		{
+			"category": "web-server",
+			"name": "Nginx",
+			"type": "primary",
+			"description": ""
+		},
+		{
+			"category": "web-server",
+			"name": "Lighttpd",
+			"type": "secondary",
+			"description": ""
+		},
+		{
+			"category": "web-server",
+			"name": "Thttpd",
+			"type": "secondary",
+			"description": ""
+		},
+		{
+			"category": "server",
+			"name": "CentOS",
+			"type": "primary",
+			"description": ""
+		},
+		{
+			"category": "server",
+			"name": "Debian",
+			"type": "secondary",
+			"description": ""
+		},
+		{
+			"category": "server",
+			"name": "Windows Server",
+			"type": "secondary",
+			"description": ""
+		},
+		{
+			"category": "project-trackers",
+			"name": "JIRA",
+			"type": "primary",
+			"description": ""
+		},
+		{
+			"category": "project-trackers",
+			"name": "VersionOne",
+			"type": "primary",
+			"description": ""
+		},
+		{
+			"category": "project-trackers",
+			"name": "Redmine",
+			"type": "secondary",
+			"description": ""
+		},
+		{
+			"category": "languages",
+			"name": "Ukrainian",
+			"type": "primary",
+			"description": "Fluent"
+		},
+		{
+			"category": "languages",
+			"name": "English",
+			"type": "primary",
+			"description": "C1 level (Effective Operational Proficiency)"
+		},
+		{
+			"category": "languages",
+			"name": "Russian",
+			"type": "primary",
+			"description": "Fluent"
+		},
+		{
+			"category": "languages",
+			"name": "French",
+			"type": "secondary",
+			"description": "Beginner"
 		}
 	]
 }

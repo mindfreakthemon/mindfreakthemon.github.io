@@ -11,6 +11,7 @@ import { SkillsRouteComponent } from './skills/skills-route.component';
 import { JobsService } from './jobs/services/jobs.service';
 import { JobsComponent } from './jobs/jobs.component';
 import { JobComponent } from './jobs/job.component';
+import { EducationRouteComponent } from './education/education-route.component';
 
 @NgModule({
 	imports: [
@@ -26,7 +27,8 @@ import { JobComponent } from './jobs/job.component';
 		SkillsRouteComponent,
 		JobComponent,
 		JobsComponent,
-		JobsRouteComponent
+		JobsRouteComponent,
+		EducationRouteComponent
 	],
 
 	providers: [
