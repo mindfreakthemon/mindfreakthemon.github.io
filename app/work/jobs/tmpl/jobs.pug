@@ -1,1 +1,3 @@
-h1 helo
+ng-container('*ngIf'='jobs.length')
+	.row
+		job.col-12('[job]'='job', '*ngFor'='let job of jobs')

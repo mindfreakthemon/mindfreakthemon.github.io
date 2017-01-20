@@ -10,6 +10,7 @@ import { SkillsService } from './skills/services/skills.service';
 import { SkillsRouteComponent } from './skills/skills-route.component';
 import { JobsService } from './jobs/services/jobs.service';
 import { JobsComponent } from './jobs/jobs.component';
+import { JobComponent } from './jobs/job.component';
 
 @NgModule({
 	imports: [
@@ -23,6 +24,7 @@ import { JobsComponent } from './jobs/jobs.component';
 		SkillComponent,
 		SkillsComponent,
 		SkillsRouteComponent,
+		JobComponent,
 		JobsComponent,
 		JobsRouteComponent
 	],

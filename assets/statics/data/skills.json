@@ -18,7 +18,8 @@
 			"category": "framework",
 			"name": "jQuery",
 			"type": "primary",
-			"description": "Area: Building SPA, components etc."
+			"description": "Area: Building SPA, components etc.",
+			"icon": "/build/statics/images/skills/framework/jquery.png"
 		},
 		{
 			"category": "programming-language",
@@ -80,25 +81,29 @@
 			"category": "databases",
 			"name": "MySQL / MariaDB",
 			"type": "primary",
-			"description": "Area: using with web servers"
+			"description": "Area: using with web servers",
+			"icon": "/build/statics/images/skills/databases/mysql.jpg"
 		},
 		{
 			"category": "databases",
 			"name": "Redis",
 			"type": "primary",
-			"description": "Area: using with web servers"
+			"description": "Area: using with web servers",
+			"icon": "/build/statics/images/skills/databases/redis.png"
 		},
 		{
 			"category": "databases",
 			"name": "MongoDB",
 			"type": "primary",
-			"description": "Area: using with web servers"
+			"description": "Area: using with web servers",
+			"icon": "/build/statics/images/skills/databases/mongodb.png"
 		},
 		{
 			"category": "databases",
 			"name": "CouchDB",
 			"type": "secondary",
-			"description": "Area: using with web servers"
+			"description": "Area: using with web servers",
+			"icon": "/build/statics/images/skills/databases/couchdb.png"
 		}
 	]
 }

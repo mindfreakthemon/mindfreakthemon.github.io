@@ -1,0 +1,15 @@
+h2 {{job.companyName}}
+h5
+	span.p-sm-1 @
+	b {{job.location}}
+	span.p-sm-1 as
+	b {{job.position}}
+h6 ({{job.dateStart}} - {{job.dateEnd}})
+
+h6 Job description:
+ul
+	li('*ngFor'='let item of job.jobDescription') {{item}}
+
+h6 Developed projects:
+ul
+	li('*ngFor'='let item of job.publicProjects') {{item}}

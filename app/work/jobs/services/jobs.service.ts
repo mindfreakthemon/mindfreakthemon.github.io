@@ -21,7 +21,7 @@ export class JobsService {
 	}
 
 	getJob(data: any): JobModel {
-		return new JobModel();
+		return new JobModel(data);
 	}
 
 }
