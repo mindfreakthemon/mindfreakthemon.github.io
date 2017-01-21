@@ -1,3 +1,20 @@
 :host {
 	width: 100%;
+
+	font-family: Consolas, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+
+.nav-link {
+	position: relative;
+}
+
+.active {
+	&::before {
+		content: '>';
+		position: absolute;
+		right: calc(100% - .5em);
+	}
+
+	border-bottom: 1px solid;
 }

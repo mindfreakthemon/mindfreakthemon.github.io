@@ -12,9 +12,11 @@ import { JobsService } from './jobs/services/jobs.service';
 import { JobsComponent } from './jobs/jobs.component';
 import { JobComponent } from './jobs/job.component';
 import { EducationRouteComponent } from './education/education-route.component';
+import { CommonModule } from '../common/common.module';
 
 @NgModule({
 	imports: [
+		CommonModule,
 		WorkRoutingModule,
 		BrowserModule,
 		FormsModule

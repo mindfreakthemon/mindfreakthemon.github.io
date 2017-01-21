@@ -18,7 +18,7 @@ export class JobsComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		this.jobsService.getJobs()
+		this.jobsService.getList()
 			.then((skills) => this.jobs = skills);
 	}
 }

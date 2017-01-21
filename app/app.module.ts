@@ -6,8 +6,8 @@ import { MainComponent } from './main/main.component';
 import { NavBarComponent } from './navbar/navbar.component';
 import { RootComponent } from './root/root.component';
 import { AppRoutingModule } from './app-routing.module';
-import { WorkModule } from './work/work.module';
-import { ProjectModule } from './projects/projects.module';
+import { WorkModule } from './modules/work/work.module';
+import { ProjectModule } from './modules/projects/projects.module';
 
 @NgModule({
 	imports: [

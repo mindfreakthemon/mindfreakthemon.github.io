@@ -13,7 +13,7 @@ export class SkillModel {
 
 	public category: SkillCategory;
 
-	constructor(name: string, description: string, icon: string, type: SkillType, category: SkillCategory) {
+	constructor({ name, description, icon, type, category } : SkillModel) {
 		this.name = name;
 		this.description = description;
 		this.icon = icon;
