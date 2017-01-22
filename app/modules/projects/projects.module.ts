@@ -6,9 +6,11 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProjectComponent } from './projects/project.component';
 import { ProjectsService } from './projects/services/projects.service';
 import { ProjectsRouteComponent } from './projects/projects-route.component';
+import { CommonModule } from '../common/common.module';
 
 @NgModule({
 	imports: [
+		CommonModule,
 		ProjectRoutingModule,
 		BrowserModule,
 		FormsModule

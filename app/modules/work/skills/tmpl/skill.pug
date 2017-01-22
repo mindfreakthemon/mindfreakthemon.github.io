@@ -1,7 +1,7 @@
 .row
 	.col-4.text-center
 		img.img-thumbnail.rounded('[src]'='skill.icon', '*ngIf'='skill.icon')
-		.img-placeholder.rounded('*ngIf'='!skill.icon')
+		.img-placeholder.rounded('*ngIf'='!skill.icon') {{skill.name | slice:0:1}}
 
 		.badge(
 			'[class.badge-primary]'='skill.type === "primary"',

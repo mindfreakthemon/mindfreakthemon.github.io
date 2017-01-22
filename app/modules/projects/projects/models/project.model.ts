@@ -1,5 +1,19 @@
-export type ProjectCategory = 'programming-language' | 'framework' | 'databases';
-
 export class ProjectModel {
-	public category: ProjectCategory;
+	public name: string;
+
+	public category: string;
+
+	public sourceURL: string;
+
+	public liveURL: string;
+
+	public description: string;
+
+	constructor({ name, category, sourceURL, liveURL, description }: ProjectModel) {
+		this.name = name;
+		this.category = category;
+		this.sourceURL = sourceURL;
+		this.liveURL = liveURL;
+		this.description = description;
+	}
 }

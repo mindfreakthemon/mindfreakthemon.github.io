@@ -1,4 +1,5 @@
-.row
-
-	.col
-		h1 helo
+h4 {{project.name}}
+p.description {{project.description}}
+.btn-group
+	a.btn('[href]'='project.sourceURL') Source
+	a.btn('*ngIf'='project.liveURL', '[href]'='project.liveURL') Live

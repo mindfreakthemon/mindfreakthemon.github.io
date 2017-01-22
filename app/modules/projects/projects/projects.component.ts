@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ProjectModel, ProjectCategory } from './models/project.model';
+import { ProjectModel } from './models/project.model';
 import { ProjectsService } from './services/projects.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { ProjectsService } from './services/projects.service';
 })
 export class ProjectsComponent implements OnInit {
 	@Input()
-	protected category: ProjectCategory;
+	protected category: string;
 
 	protected projects: ProjectModel[] = [];
 
