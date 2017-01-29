@@ -2,22 +2,27 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { LoadingComponent } from './loading/loading.component';
+import { NavBarComponent } from './navbar/navbar.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
 	imports: [
 		BrowserModule,
-		FormsModule
+		FormsModule,
+		RouterModule
 	],
 
 	declarations: [
-		LoadingComponent
+		LoadingComponent,
+		NavBarComponent
 	],
 
 	providers: [
 	],
 
 	exports: [
-		LoadingComponent
+		LoadingComponent,
+		NavBarComponent
 	]
 })
 export class CommonModule {

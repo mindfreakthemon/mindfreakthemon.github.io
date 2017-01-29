@@ -1,6 +1,11 @@
-html, body {
+html {
+	height: 100%;
+}
+
+body {
 	background-color: #000;
-	min-height: 100vh;
+	min-height: 100%;
+	height: 1px;
 }
 
 .card {
@@ -12,16 +17,8 @@ html, body {
 	}
 }
 
-.photo {
-	border-radius: .25em;
-}
-
-.primary-links {
-	.row {
-		margin-top: 0;
-	}
-
-	.btn {
-		margin: 0.5em 0 0 0.5em;
+@media (max-width: 600px) {
+	.display-1 {
+		font-size: 4rem;
 	}
 }
