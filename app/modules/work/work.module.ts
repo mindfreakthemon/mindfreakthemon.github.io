@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { WorkRoutingModule } from './work-routing.module';
 import { JobsRouteComponent } from './jobs/jobs-route.component';
 import { SkillsComponent } from './skills/skills.component';
-import { RootComponent } from './root/root.component';
 import { SkillComponent } from './skills/skill.component';
 import { SkillsService } from './skills/services/skills.service';
 import { SkillsRouteComponent } from './skills/skills-route.component';
@@ -23,7 +22,6 @@ import { CommonModule } from '../common/common.module';
 	],
 
 	declarations: [
-		RootComponent,
 		SkillComponent,
 		SkillsComponent,
 		SkillsRouteComponent,
