@@ -36,4 +36,4 @@ gulp.task('vendor:static', () => {
 });
 
 
-gulp.task('vendor', ['vendor:static', 'vendor:dynamic']);
+gulp.task('vendor', gulp.parallel('vendor:static', 'vendor:dynamic'));

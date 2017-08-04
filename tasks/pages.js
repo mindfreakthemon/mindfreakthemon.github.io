@@ -12,7 +12,7 @@ const PAGES_OUT_DIR = '.';
 /**
  * Injects vendor bundle into js section and all css files into css section.
  */
-gulp.task('pages', ['vendor', 'css'], () => {
+gulp.task('pages', gulp.series('vendor', 'css', () => {
 	return gulp.src(PAGES_SRC_GLOB)
 		.pipe(plumber())
 		.pipe(inject(gulp.src('build/bundle/vendor.js', { read: false })))
@@ -20,12 +20,12 @@ gulp.task('pages', ['vendor', 'css'], () => {
 		.pipe(pug({ pretty: true }))
 		.pipe(gulp.dest(PAGES_OUT_DIR))
 		.pipe(connect.reload());
-});
+}));
 
 /**
  * Injects vendor bundle, app bundle into js section and all css into css section.
  */
-gulp.task('pages:prod', ['vendor', 'app:prod', 'css:prod'], () => {
+gulp.task('pages:prod', gulp.series('vendor', 'app:prod', 'css:prod', () => {
 	let vendor = gulp.src('build/bundle/vendor.js', { read: false });
 	let app = gulp.src('build/bundle/app.min.js', { read: false });
 
@@ -43,6 +43,6 @@ gulp.task('pages:prod', ['vendor', 'app:prod', 'css:prod'], () => {
 		}))
 		.pipe(gulp.dest(PAGES_OUT_DIR))
 		.pipe(connect.reload());
-});
+}));
 
-gulp.task('pages:watch', () => gulp.watch(PAGES_SRC_GLOB, ['pages']));
+gulp.task('pages:watch', () => gulp.watch(PAGES_SRC_GLOB, gulp.task('pages')));

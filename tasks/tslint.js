@@ -23,4 +23,4 @@ gulp.task('tslint:test', () => {
 		.pipe(tslint.report());
 });
 
-gulp.task('tslint', ['tslint:app', 'tslint:test']);
+gulp.task('tslint', gulp.parallel('tslint:app', 'tslint:test'));
