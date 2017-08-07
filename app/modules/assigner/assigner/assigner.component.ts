@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 
 export class SeatNotFoundException extends Error {
-
+	constructor(public person: string) {
+		super();
+	}
 }
 
 @Component({
@@ -21,7 +23,7 @@ export class AssignerComponent {
 	constructor() {
 		this.map.set('palpal', [14, 13, 15]);
 		this.map.set('v', [15, 16, 10]);
-		this.map.set('ivan', [15, 16, 10]);
+		this.map.set('ivan', [15, 14, 16]);
 		this.map.set('annushka', [13, 14, 18, 17]);
 		this.map.set('galinka', [18, 14, 13, 17]);
 		this.map.set('yuliia', [18, 8, 7, 6]);
@@ -176,14 +178,14 @@ export class AssignerComponent {
 			}
 		}
 
-		throw new SeatNotFoundException();
+		throw new SeatNotFoundException(player);
 	}
 
 	assign() {
 		try {
 			this.result = this.seek(this.array.slice()).join('\n');
 		} catch (e) {
-			this.result = 'not possible to assign';
+			this.result = 'not possible to assign seat for ' + e.person;
 		}
 	}
 }
