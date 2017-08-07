@@ -8,9 +8,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { WorkModule } from './modules/work/work.module';
 import { ProjectModule } from './modules/projects/projects.module';
 import { CommonModule } from './modules/common/common.module';
+import { AssignerModule } from './modules/assigner/assigner.module';
 
 @NgModule({
 	imports: [
+		AssignerModule,
 		WorkModule,
 		ProjectModule,
 		AppRoutingModule,

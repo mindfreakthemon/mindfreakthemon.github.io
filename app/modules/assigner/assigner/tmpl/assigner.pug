@@ -1,0 +1,51 @@
+
+.container
+  .row
+    .col
+      .card(
+          '*ngFor'='let entry of array',
+          'draggable'='true',
+          'droppable'='true',
+          'draggableId'='persons',
+          'droppableId'='persons',
+          '(dragBeacon)'='handlePersonDrag($event)',
+          '(dropBeacon)'='handlePersonDrop($event)',
+          '[attr.data-person]'='entry[0]'
+          )
+          .card-block
+            h4.card-title {{ entry[0] }}
+              //button(type='button', '(click)'='removePlayer(entry[0])') remove
+
+            .card-text(
+              'droppable'='true',
+              '[droppableId]'='entry[0]',
+              '(dropBeacon)'='handleSeatsDrop($event)',
+              '[attr.data-person]'='entry[0]'
+            )
+              ul.list-group
+                li.list-group-item(
+                  '*ngFor'='let seat of entry[1]',
+
+                  'draggable'='true',
+                  '[draggableId]'='entry[0]',
+                  'droppable'='true',
+                  '[droppableId]'='entry[0]',
+                  '[attr.data-id]'='seat',
+                  '[attr.data-person]'='entry[0]',
+                  '(dragBeacon)'='handleSeatDrag($event)',
+                  '(dropBeacon)'='handleSeatDrop($event)'
+                )
+                  .row.w-100
+                    .col {{ seat }}
+                    .col.text-right: button.btn.btn-sm.pull-right(type='button', '(click)'='removeSeat(entry[0], seat)') remove
+
+            form.my-3.form-inline
+              .form-group
+                label seat number:
+                input.form-control.form-control-sm('#seat'='', type='number', min='0', max='20', step='1')
+              button.btn.btn-sm('(click)'='addSeat(entry[0], seat.valueAsNumber)') add
+
+    .col.py-2
+      img.w-100(src='http://i.imgur.com/B1rRJ8V.jpg')
+
+      textarea.w-100.my-2('[(ngModel)]'='result', readonly)

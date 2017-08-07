@@ -6,6 +6,8 @@ import { NavBarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { StickyRootDirective, StickyDirective } from './sticky/sticky.directive';
 import { RootComponent } from './root/root.component';
+import { DraggableDirective } from './drag-n-drop/draggable.directive';
+import { DroppableDirective } from './drag-n-drop/droppable.directive';
 
 @NgModule({
 	imports: [
@@ -15,6 +17,8 @@ import { RootComponent } from './root/root.component';
 	],
 
 	declarations: [
+		DraggableDirective,
+		DroppableDirective,
 		LoadingComponent,
 		NavBarComponent,
 		StickyDirective,
@@ -26,6 +30,8 @@ import { RootComponent } from './root/root.component';
 	],
 
 	exports: [
+		DraggableDirective,
+		DroppableDirective,
 		LoadingComponent,
 		NavBarComponent,
 		StickyDirective,

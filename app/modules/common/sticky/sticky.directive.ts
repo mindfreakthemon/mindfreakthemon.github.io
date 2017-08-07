@@ -1,10 +1,8 @@
 import {
-	Directive, HostListener, Inject, ViewContainerRef, Input, ContentChild, Renderer,
-	AfterContentInit
+	Directive, HostListener, Inject, ViewContainerRef, Input, ContentChild, Renderer2, AfterContentInit
 } from '@angular/core';
-import { DOCUMENT } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
 import { Throttle } from '../../../decorators/throttle.decorator';
-
 
 @Directive({
 	selector: '[sticky]'
@@ -27,7 +25,7 @@ export class StickyRootDirective implements AfterContentInit {
 	constructor(
 		@Inject(DOCUMENT)
 		private document: Document,
-		private renderer: Renderer,
+		private renderer: Renderer2,
 		public vcRef: ViewContainerRef) {
 	}
 
@@ -47,9 +45,15 @@ export class StickyRootDirective implements AfterContentInit {
 
 		let isFixed = scrollTop > nativeElement.clientTop;
 
-		this.renderer.setElementClass(stickerElement, this.sticker.className, isFixed);
-		this.renderer.setElementClass(nativeElement, this.className, isFixed);
-		this.renderer.setElementStyle(nativeElement, 'paddingTop', isFixed ? `${stickerElement.clientHeight}px` : null);
+		if (isFixed) {
+			this.renderer.addClass(stickerElement, this.sticker.className);
+			this.renderer.addClass(nativeElement, this.className);
+			this.renderer.setStyle(nativeElement, 'paddingTop', `${stickerElement.clientHeight}px`);
+		} else {
+			this.renderer.removeClass(stickerElement, this.sticker.className);
+			this.renderer.removeClass(nativeElement, this.className);
+			this.renderer.removeStyle(nativeElement, 'paddingTop');
+		}
 	}
 
 	ngAfterContentInit(): void {
