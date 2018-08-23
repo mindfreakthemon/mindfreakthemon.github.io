@@ -1,8 +1,4 @@
-build/app
-build/vendor
-build/templates
-build/test
-typings
+build
 node_modules
 *.log
 .idea

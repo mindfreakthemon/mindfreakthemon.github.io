@@ -15,6 +15,19 @@ html
 					.sk-child(class='sk-circle' + (i + 1))
 		//- inject:js
 		//- endinject
-		script(inline, src='systemjs.config.js')
 		script.
+			window.DragEvent = window.DragEvent || window.Event;
+			System.config({
+				map: {
+					app: '#{buildDir}/app',
+					'rxjs-compat': 'npm:rxjs-compat',
+					'reflect-metadata': 'npm:reflect-metadata/Reflect.js'
+				}
+			});
+			System.config({
+				packages: {
+					app: { main: '#{main}', defaultExtension: 'js' },
+					'rxjs-compat': { defaultExtension: 'js' }
+				}
+			});
 			System.import('app');
